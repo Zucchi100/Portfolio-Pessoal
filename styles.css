@@ -1,0 +1,599 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+/* Estilos para o vídeo de fundo */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+
+/* Adicione um fundo semitransparente às seções para melhorar a legibilidade */
+section {
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 20px;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+/* Ajuste o header para ter um fundo semitransparente */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Ajuste outros elementos conforme necessário para garantir legibilidade */
+h1, h2, p, .btn-download, .contato-item {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #000000, #0f4c81);
+    color: #ffffff;
+    line-height: 1.6;
+    background: transparent;
+}
+
+/* Seção de Contato */
+#contato {
+    padding: 40px 20px;
+}
+
+.contato-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.contato-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.contato-item:hover {
+    transform: translateY(-5px);
+}
+
+.contato-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.contato-item span {
+    font-size: 14px;
+}
+
+/* Header e Navbar */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+.mudar-back {
+
+    background-color: rgba(16, 15, 15, 0.443);
+
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 10px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #0f4c81;
+    border-radius: 5px;
+}
+
+/* Seções principais */
+main {
+    padding-top: 60px; /* Espaço para a navbar fixa */
+}
+
+section {
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+h1, h2 {
+    color: #4db8ff;
+}
+
+/* Estilo para os projetos (mantendo o estilo anterior) */
+.projetos-grid {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projeto {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 10px solid #4db8ff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.projeto:hover {
+    transform: translateY(-5px);
+}
+
+.projeto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.projeto h3 {
+    padding: 10px;
+    margin: 0;
+    color: #4db8ff;
+}
+
+.projeto p {
+    padding: 0 10px 10px;
+}
+
+.btn-ver-mais {
+    display: inline-block;
+    margin: 10px;
+    padding: 5px 10px;
+    background-color: #0f4c81;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-ver-mais:hover {
+    background-color: #4db8ff;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .projetos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .projetos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+   
+/* Adicione isso ao seu arquivo CSS existente */
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%) rotate(-10deg);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0) rotate(0deg);
+}
+
+@media (prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
+.btn-ver-mais:hover {
+    background-color: #4db8ff;
+}
+
+/* Formulário de contato */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+form button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #0f4c81;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #4db8ff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+}
+
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.projeto {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #4db8ff;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(77, 184, 255, 0.3);
+}
+
+.projeto img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.projeto:hover img {
+    transform: scale(1.05);
+}
+
+.projeto-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto h3 {
+    margin: 0 0 10px 0;
+    color: #4db8ff;
+    font-size: 1.4em;
+}
+
+.projeto p {
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.btn-ver-mais {
+    align-self: flex-start;
+    padding: 8px 15px;
+    background-color: #0f4c81;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-ver-mais:hover {
+    background-color: #4db8ff;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .projetos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .projetos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projeto img {
+        height: 250px;
+    }
+}
+
+
+/* Seção de Currículo */
+#curriculo {
+    padding: 40px 20px;
+}
+
+.curriculo-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    background-color: rgba(22, 26, 23, 0.66);;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.curriculo-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 135px;
+}
+
+.curriculo-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.curriculo-content ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.curriculo-content ul li::before {
+    content: "•";
+    color: #4db8ff;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.btn-download {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0f4c81;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+    background-color: #4db8ff;
+}
+
+.curriculo-image {
+    flex: 0 0 auto;
+    width: 210mm; /* Largura A4 */
+    height: 297mm; /* Altura A4 */
+    max-height: 70vh; /* Limita a altura para não ficar muito grande em telas menores */
+    border: 5px solid #4db8ff;
+    box-shadow: 0 0 20px rgba(77, 184, 255, 0.5);
+    overflow: hidden;
+}
+
+.curriculo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-download {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0f4c81;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+    background-color: #4db8ff;
+}
+/* Seção Inicial */
+#inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: rgba(22, 26, 23, 0.66);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.profile-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #4db8ff;
+    box-shadow: 0 0 20px rgba(77, 184, 255, 0.5);
+    position: relative;
+}
+
+.profile-image::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, #0f78d4, #1d5a82);
+    z-index: -1;
+    border-radius: 50%;
+    animation: rotate 10s linear infinite;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    text-align: left;
+}
+
+.profile-info h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #4db8ff;
+}
+
+.profile-info p {
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-info {
+        text-align: center;
+    }
+}
+/* Responsividade */
+@media (max-width: 1200px) {
+    .curriculo-container {
+        flex-direction: column;
+    }
+
+    .curriculo-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 210 / 297; /* Mantém a proporção A4 */
+    }
+
+    nav ul {
+        list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+ }
+
+ nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 10px;
+    display: block;
+    transition: all 0.3s ease;
+}
+ h1, h2 {
+    color: #4db8ff;
+    margin-left: 104px;
+}
+
+.h1-responsivo {
+
+    margin-left: -16px;
+}
+
+.h2-responsivo {
+
+    margin-left: 104px;
+
+}
+.curriculo-responsivo {
+
+
+    margin-left: 34px;
+
+}
+
+}
